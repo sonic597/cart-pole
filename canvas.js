@@ -17,8 +17,9 @@ class Cart {
         this.angle = -Math.PI/2 + Math.random()*0.001 - 0.001 // the angle reletive to x axis
         this.acc = 0
         this.vel = 0 // velocity in the direction at pi/2 to the end of the pole
-        this.grav = 0.001
+        this.grav = 0.0015
         this.damping = 0.99
+        this.angle_threshold = Math.PI/20 // the threshold to end the game ie: game ends if angle < 0+threshold
     }
 
     update(){
@@ -33,7 +34,8 @@ class Cart {
         this.polex = this.poleLength*Math.cos(this.angle) + this.x
         this.poley = this.poleLength*Math.sin(this.angle) + (this.y-this.size*0.2)
 
-        if(!(-Math.PI <this.angle && this.angle< 0)){
+        if(0-this.angle_threshold < this.angle || this.angle < -Math.PI+this.angle_threshold){
+            console.log("hi")
             this.x = canvas.width/2
             this.y = 8*canvas.height/9
             this.polex = this.x
@@ -115,6 +117,9 @@ class Cart {
             c.closePath();
 
         }
+
+        this.x = this.x<0 ? this.x = canvas.width : this.x //go to other side
+        this.x = this.x>canvas.width ? this.x = 0 : this.x
     }
 }
 
