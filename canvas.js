@@ -14,7 +14,7 @@ class Cart {
         this.poleLength = this.size*10/8
         this.polex = this.x
         this.poley = (this.y-this.size*0.2)-this.poleLength
-        this.angle = -Math.PI/2 + Math.random()*0.001 - 0.001 // the angle reletive to x axis
+        this.angle = -Math.PI/2 + Math.random()*0.001 - 0.001 // the angle relative to x axis
         this.acc = 0
         this.vel = 0 // velocity in the direction at pi/2 to the end of the pole
         this.grav = 0.0015
@@ -35,12 +35,11 @@ class Cart {
         this.poley = this.poleLength*Math.sin(this.angle) + (this.y-this.size*0.2)
 
         if(0-this.angle_threshold < this.angle || this.angle < -Math.PI+this.angle_threshold){
-            console.log("hi")
             this.x = canvas.width/2
             this.y = 8*canvas.height/9
             this.polex = this.x
             this.poley = (this.y-this.size*0.2)-this.poleLength
-            this.angle = -Math.PI/2 + Math.random()*0.002 - 0.001 // the angle reletive to x axis
+            this.angle = -Math.PI/2 + Math.random()*0.002 - 0.001 // the angle relative to x axis
             this.vel = 0 // velocity in the direction at pi/2 to the end of the pole
             this.cartvel = 0
         }
