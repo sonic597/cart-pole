@@ -4,7 +4,7 @@ This project takes inspriation from the cartpole problem from "Introduction to R
 
 I hope to implement an AI to play the game in the future
 
-Run here! `https://sonic597.github.io/cart-pole/index.html`
+Run `[Here](https://sonic597.github.io/cart-pole/index.html)`!
 
 -sonic597
 
